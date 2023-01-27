@@ -8,8 +8,10 @@ function App() {
 
   const [gender, setGender] = useState('None yet')
   const [terminaison, setTerminaison] = useState('')
+  const [name, setName] = useState('')
   const [school, setSchool] = useState('')
-  const [prefix, SetPrefix] = useState('')
+  const [prefix, setPrefix] = useState('')
+  
 
   const maleHandler = () => {
     setGender('Male')
@@ -20,6 +22,22 @@ function App() {
     setGender('Female')
     setTerminaison('ée')
   }
+
+  const nameHandler = event => {
+    setName(event.target.value)
+    let vowels = ['A', 'E', 'I', 'O', 'U']
+    if (vowels.includes(name.toUpperCase()[0])) {
+      setPrefix("d'")
+    } else {
+      setPrefix("de")
+    }
+  }
+
+  const schoolHandler = event => {
+    setSchool(event.target.value)
+  }
+
+  console.log(prefix)
 
   return (
     <div>
@@ -35,10 +53,20 @@ function App() {
           <button className="female-button" onClick={femaleHandler}><FcBusinesswoman /></button>        
       </div>
       <div className="input-field">
-        <input />  
+      <input
+      type="text"
+      name="name"
+      onChange={nameHandler}
+      value={name}
+      />  
       </div>
       <div className="input-field">
-        <input />
+      <input
+      type="text"
+      name="name"
+      onChange={schoolHandler}
+      value={school}
+      />  
       </div>            
       </body>
     </div>
