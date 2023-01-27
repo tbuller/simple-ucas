@@ -3,7 +3,9 @@
 }
 
 body {
-  background-color: white;
+  background-color: rgb(218, 217, 217);
+  font-family: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+  font-size: 25px;
 }
 
 button {
@@ -15,22 +17,51 @@ button {
 }
 
 button:hover {
-  background-color: green;
+  background-color: rgb(169, 240, 169);
+  cursor: pointer;
+}
+
+button:focus {
+  background-color: rgb(38, 168, 38);
 }
 
 .button-container {
   float: left;
   padding-left: 80px;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 input {
+  font-family: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+  font-size: 20px;
   width: 300px;
   height: 35px;
+  border-radius: 12px;
 }
 
 .input-field {
   float: left;
   padding-left: 80px;
-  padding-top: 45px;
+  padding-top: 61px;
+}
+
+.text-content {
+  color: blue;
+  padding-top: 180px;
+  padding-left: 50px;
+}
+
+
+
+.generate-button {
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-right: 10px; 
+}
+
+.generate-button-container {
+  padding-top: 26px;
+  padding-left: 1150px;
 }

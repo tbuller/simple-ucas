@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { react, useState, state, onChange } from 'react'
+import { useState } from 'react'
 import { FcBusinessman, FcBusinesswoman } from 'react-icons/fc'
+import { BiRun } from 'react-icons/bi'
 
 
 function App() {
@@ -11,15 +12,16 @@ function App() {
   const [name, setName] = useState('')
   const [school, setSchool] = useState('')
   const [prefix, setPrefix] = useState('')
+  const [content, setContent] = useState('')
   
 
   const maleHandler = () => {
-    setGender('Male')
+    setGender('Il')
     setTerminaison('é')
   }
 
   const femaleHandler = () => {
-    setGender('Female')
+    setGender('Elle')
     setTerminaison('ée')
   }
 
@@ -29,7 +31,7 @@ function App() {
     if (vowels.includes(name.toUpperCase()[0])) {
       setPrefix("d'")
     } else {
-      setPrefix("de")
+      setPrefix("de ")
     }
   }
 
@@ -37,7 +39,9 @@ function App() {
     setSchool(event.target.value)
   }
 
-  console.log(prefix)
+  const generateHandler = () => {
+    setContent(`${name} souhaite postuler aux universitées anglaises. Son école préferé est ${school}. ${gender} est passion${terminaison} des sciences. Merci de lire la lettre ${prefix}${name}`)
+  }
 
   return (
     <div>
@@ -47,10 +51,10 @@ function App() {
       </div>  
       <body>
       <div className="button-container">
-          <button className="male-button" onClick={maleHandler}><FcBusinessman /></button>
+          <button className="gender-button" onClick={maleHandler}><FcBusinessman /></button>
       </div>
       <div className="button-container">                    
-          <button className="female-button" onClick={femaleHandler}><FcBusinesswoman /></button>        
+          <button className="gender-button" onClick={femaleHandler}><FcBusinesswoman /></button>        
       </div>
       <div className="input-field">
       <input
@@ -67,6 +71,13 @@ function App() {
       onChange={schoolHandler}
       value={school}
       />  
+      </div>
+      <br/>
+      <div className="generate-button-container">
+        <button className="generate-button" onClick={generateHandler}><BiRun /></button>
+      </div>
+      <div className="text-content">
+        <p>{content}</p>
       </div>            
       </body>
     </div>
