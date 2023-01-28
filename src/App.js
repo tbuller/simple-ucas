@@ -47,6 +47,7 @@ function App() {
     <div>
       <div className="App">
         <header className="App-header">
+          simple-ucas
         </header>
       </div>  
       <body>
@@ -56,7 +57,9 @@ function App() {
       <div className="button-container">                    
           <button className="gender-button" onClick={femaleHandler}><FcBusinesswoman /></button>        
       </div>
-      <div className="input-field">
+      <div className="all-inputs">
+      <label className="input-label">Student name:</label>  
+      <div className="input-field">      
       <input
       type="text"
       name="name"
@@ -64,6 +67,7 @@ function App() {
       value={name}
       />  
       </div>
+      <label className="input-label">Current school:</label>  
       <div className="input-field">
       <input
       type="text"
@@ -72,7 +76,10 @@ function App() {
       value={school}
       />  
       </div>
-      <br/>
+      <div className="input-field">
+        <input type="text" />      
+      </div>  
+      </div>    
       <div className="generate-button-container">
         <button className="generate-button" onClick={generateHandler}><BiRun /></button>
       </div>

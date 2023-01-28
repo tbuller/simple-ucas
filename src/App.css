@@ -40,9 +40,9 @@ input {
 }
 
 .input-field {
-  float: left;
+  float: bottom;
   padding-left: 80px;
-  padding-top: 61px;
+  padding-top: 3px;
 }
 
 .text-content {
@@ -50,8 +50,6 @@ input {
   padding-top: 180px;
   padding-left: 50px;
 }
-
-
 
 .generate-button {
   height: 50px;
@@ -64,4 +62,13 @@ input {
 .generate-button-container {
   padding-top: 26px;
   padding-left: 1150px;
+}
+
+.all-inputs {
+  padding-top: 120px;
+}
+
+.input-label {
+  padding-left: 80px;
+  font-size: 18px;
 }
